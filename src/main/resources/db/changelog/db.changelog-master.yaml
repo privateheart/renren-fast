@@ -1,0 +1,100 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Levin
+      changes:
+        - createTable:
+            tableName: person
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 2
+      author: Levin
+      changes:
+        - insert:
+            tableName: person
+            columns:
+              - column:
+                  name: first_name
+                  value: Marcel
+              - column:
+                  name: last_name
+                  value: Overdijk
+  - changeSet:
+      id: 3
+      author: Levin
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: classpath:db/changelog/sqlfile/test1.sql
+  - changeSet:
+      id: 4
+      author: Levin
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: address
+                  type: varchar(255)
+            tableName: person
+  - changeSet:
+        id: 5
+        author: Levin
+        changes:
+          - dropColumn:
+              columnName: address
+              tableName: person
+    - changeSet:
+        id: 6
+        author: Levin
+        changes:
+          - createTable:
+              tableName: org_access_group
+              columns:
+                - column:
+                    name: id
+                    type: int
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: user_id
+                    type: int(11)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: access_group
+                    type: varchar(20)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: note
+                    type: varchar(300)
+                    constraints:
+                    nullable: false
+    - changeSet:
+        id: 7
+        author: Levin
+        changes:
+          - sqlFile:
+              encoding: utf8
+              path: classpath:db/changelog/sqlfile/test3.sql
+    - include:
+      file: classpath:db/changelog/*.yaml

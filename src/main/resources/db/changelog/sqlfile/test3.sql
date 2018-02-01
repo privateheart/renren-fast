@@ -1,0 +1,3 @@
+INSERT INTO `fractal`.`sys_param` (`key_name`, `value_str`, `value_num`, `value_date`, `description`, `seq_no`, `is_valid`, `parent_id`, `is_reserve`, `note`) VALUES ('KEY_NAME', 'ACCESS_GROUP', NULL, NULL, '厂商数据权限组别', NULL, 'Y', NULL, NULL, NULL);
+INSERT INTO `fractal`.`sys_param` (`key_name`, `value_str`, `value_num`, `value_date`, `description`, `seq_no`, `is_valid`, `parent_id`, `is_reserve`, `note`) VALUES ('ACCESS_GROUP', '华南区', NULL, NULL, NULL, '2', 'Y', NULL, NULL, NULL);
+INSERT INTO `fractal`.`sys_param` (`key_name`, `value_str`, `value_num`, `value_date`, `description`, `seq_no`, `is_valid`, `parent_id`, `is_reserve`, `note`) VALUES ('ACCESS_GROUP', '华东区', NULL, NULL, NULL, '1', 'Y', NULL, NULL, NULL);
